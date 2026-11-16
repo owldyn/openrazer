@@ -121,6 +121,13 @@
 #define USB_DEVICE_ID_RAZER_BASILISK_MOBILE_RECEIVER 0x00D4
 #define USB_DEVICE_ID_RAZER_BASILISK_V3_PRO_35K_PHANTOM_GREEN_EDITION_WIRED 0x00D6
 #define USB_DEVICE_ID_RAZER_BASILISK_V3_PRO_35K_PHANTOM_GREEN_EDITION_WIRELESS 0x00D7
+#define USB_DEVICE_ID_RAZER_COBRA_HYPERSPEED_WIRED 0x00DA
+#define USB_DEVICE_ID_RAZER_COBRA_HYPERSPEED_WIRELESS 0x00DB
+#define USB_DEVICE_ID_RAZER_VIPER_V3_PRO_SE_WIRED 0x00DE
+#define USB_DEVICE_ID_RAZER_VIPER_V3_PRO_SE_WIRELESS 0x00DF
+#define USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER 0x00E0
+#define USB_DEVICE_ID_RAZER_VIPER_V4_PRO_WIRED 0x00E5
+#define USB_DEVICE_ID_RAZER_VIPER_V4_PRO_WIRELESS 0x00E6
 
 /* Each keyboard report has 90 bytes*/
 #define RAZER_REPORT_LEN 0x5A
@@ -155,6 +162,9 @@ struct razer_mouse_device {
 
     unsigned short usb_vid;
     unsigned short usb_pid;
+
+    // 0=awake, 1=asleep, 2=unknown
+    u8 sleep_state;
 
     char serial[23]; // Now storing a random serial to be used with old devices that don't support it
 
